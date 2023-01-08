@@ -1,26 +1,21 @@
-BRGIN = """—🧻••÷[ ɦʏքɛ_քʊʀɢɛ_ɮօȶ ]÷••🧻—  
-Hello user i have been coded to help groups with deleting muliple messages without any hassle.
+BRGIN = """  
+Halo pengguna saya telah diprogram untuk membantu grup menghapus pesan muliple dengan simple dan mudah.
 
-press /help if you want to use me
+tekan /help jika Anda ingin menggunakan saya"""
 
- 🦞DΣV MΣПƬIӨП:
-💻 @hypevoidsoul | @hypevoidbot  
-—🧻••÷[ ɦʏքɛ_քʊʀɢɛ_ɮօȶ ]÷••🧻—"""
+
 DEL_TER = "https://telegra.ph/file/be36caba7b18b8a146390.jpg"
-FUSE = """—🧻••÷[ ɦʏքɛ_քʊʀɢɛ_ɮօȶ ]÷••🧻—  
-Firstly add the bot in group and make it admin with `delete-messages` permission only!
+FUSE = """Pertama tambahkan bot dalam grup dan jadikan admin hanya dengan izin 'HAPUS PESAN'!
 
-Bot is ready.
-use any of these commands:
-  - /purge
-  - /delete
-  - /remove
-  - /clean
-  `[as a reply to the messages you want to delete]`
-  
- 🦞DΣV MΣПƬIӨП:
-💻 @hypevoidsoul | @hypevoidbot  
-—🧻••÷[ ɦʏքɛ_քʊʀɢɛ_ɮօȶ ]÷••🧻—"""
+Bot sudah siap.
+Gunakan salah satu perintah ini:
+┏━━━━━━━━━━━━━━
+┣• /purge 
+┣• /delete 
+┣• /remove 
+┣• /clean 
+┗━━━━━━━━━━━━━━
+ '[sebagai balasan atas pesan yang ingin Anda hapus]'"""
 IMPORTED = {}
 HELPABLE = {}
 GDPR = []
