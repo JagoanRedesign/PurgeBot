@@ -28,7 +28,7 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Add ɦʏքɛ_քʊʀɢɛ_ɮօȶ your group.",
+                                text="tambahkan ke grup",
                                 url="t.me/{}?startgroup=botstart".format(context.bot.username),
                             )
                         ]
@@ -36,7 +36,7 @@ def start(update: Update, context: CallbackContext):
                 ),
             )
     else:
-        ok = update.effective_message.reply_photo(DEL_TER,"—🧻••÷[ ɦʏքɛ_քʊʀɢɛ_ɮօȶ ]÷••🧻—\n\n♦️𝗡𝗼𝘁𝗲 𝗧𝗼 𝗔𝗱𝗺𝗶𝗻𝘀♦️\n𝘋𝘰𝘯'𝘵 𝘧𝘰𝘳𝘨𝘦𝘵 𝘵𝘰 𝘨𝘪𝘷𝘦 𝘮𝘦 𝘥𝘦𝘭𝘦𝘵𝘦 𝘮𝘦𝘴𝘴𝘢𝘨𝘦𝘴 𝘢𝘥𝘮𝘪𝘯 𝘳𝘪𝘨𝘩𝘵𝘴.\n\n—🧻••÷[ ɦʏքɛ_քʊʀɢɛ_ɮօȶ ]÷••🧻—")
+        ok = update.effective_message.reply_photo(DEL_TER,"♦️𝗡𝗼𝘁𝗲 𝗧𝗼 𝗔𝗱𝗺𝗶𝗻𝘀♦️\nJangan lupa beri saya hak admin hapus pesan.")
         ok.delete(timeout=10)
 
 
@@ -78,21 +78,21 @@ def help_button(update: Update, context: CallbackContext):
                                      reply_markup=InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help")))
         context.bot.answer_callback_query(query.id)
     except BadRequest as excp:
-        if excp.message == "Message is not modified":
+        if excp.message == "Pesan tidak diubah":
             pass
         elif excp.message == "Query_id_invalid":
             pass
-        elif excp.message == "Message can't be deleted":
+        elif excp.message == "Pesan tidak bisa dihapus":
             pass
         else:
-            FEEDBACK.exception("Exception in help buttons. %s", str(query.data))
+            FEEDBACK.exception("Pengecualian di tombol bantuan. %s", str(query.data))
 
 run_async
 def get_help(update: Update, context: CallbackContext):
     args = context.args
     chat = update.effective_chat
     if chat.type != chat.PRIVATE:
-        update.effective_message.reply_text("Contact me in PM to get the list of possible commands.",
+        update.effective_message.reply_text("Hubungi saya dalam PM untuk mendapatkan daftar perintah.",
                                             reply_markup=InlineKeyboardMarkup(
                                                 [[InlineKeyboardButton(text="Help",
                                                                        url="t.me/{}?start=help".format(
