@@ -25,26 +25,26 @@ def purge(update: Update, context: CallbackContext):
                 try:
                     context.bot.deleteMessage(chat.id, m_id)
                 except BadRequest as err:
-                    if err.message == "Message can't be deleted":
-                        context.bot.send_message(chat.id, "—🧻••÷[ ɦʏքɛ_քʊʀɢɛ_ɮօȶ ]÷••🧻—\n\nCannot delete all messages. The messages may be too old, I might "
-                                                  "not have delete rights, or this might not be a supergroup.")
+                    if err.message == "Pesan tidak bisa dihapus":
+                        context.bot.send_message(chat.id, "Tidak dapat menghapus semua pesan. Pesan-pesannya mungkin terlalu tua, saya mungkin "
+                                                  "Tidak memiliki hak hapus, atau ini mungkin bukan supergrup.")
                         
 
-                    elif err.message != "Message to delete not found":
-                        FEEDBACK.exception("Error while cleaning chat messages.")
+                    elif err.message != "Pesan untuk menghapus tidak ditemukan":
+                        FEEDBACK.exception("Kesalahan saat membersihkan pesan chat.")
 
             try:
                 msg.delete()
             except BadRequest as err:
                 if err.message == "Message can't be deleted":
-                    context.bot.send_message(chat.id, "—🧻••÷[ ɦʏքɛ_քʊʀɢɛ_ɮօȶ ]÷••🧻—\n\nCannot delete all messages. The messages may be too old, I might "
-                                              "not have delete rights, or this might not be a supergroup.")
+                    context.bot.send_message(chat.id, "Tidak dapat menghapus semua pesan. Pesan-pesannya mungkin terlalu tua, saya mungkin "
+                                              "Tidak memiliki hak hapus, atau ini mungkin bukan supergrup.")
                     
 
-                elif err.message != "Message to delete not found":
-                    FEEDBACK.exception("Error while cleaning chat messages.")
+                elif err.message != "Pesan untuk menghapus tidak ditemukan":
+                    FEEDBACK.exception("Kesalahan saat membersihkan pesan chat.")
 
-            context.bot.send_message(chat.id, "—🧻••÷[ ɦʏքɛ_քʊʀɢɛ_ɮօȶ ]÷••🧻—\n\nCleaning Done.")
+            context.bot.send_message(chat.id, "Pembersihan Selesai.")
             
             return "<b>{}:</b>" \
                    "\n#PURGE" \
@@ -54,7 +54,7 @@ def purge(update: Update, context: CallbackContext):
                                                                delete_to - message_id)
 
     else:
-        msg.reply_photo(DEL_TER,"—🧻••÷[ ɦʏքɛ_քʊʀɢɛ_ɮօȶ ]÷••🧻—\n\nReply to a message to select where to start cleaning from.")
+        msg.reply_photo(DEL_TER,"Membalas pesan untuk memilih tempat untuk mulai membersihkan.")
         
     return ""
 
@@ -62,5 +62,5 @@ def purge(update: Update, context: CallbackContext):
 
 __element__ = "Purge"
 
-PURGE_HANDLER = CommandHandler("purge", purge, filters=Filters.chat_type.groups, pass_args=True)
+PURGE_HANDLER = CommandHandler("bersihkan", purge, filters=Filters.chat_type.groups, pass_args=True)
 dispatcher.add_handler(PURGE_HANDLER)
