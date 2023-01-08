@@ -65,7 +65,7 @@ def user_admin(func):
             pass
         else:
             update.effective_message.reply_text(
-                "Siapa yang tidak memberi tahu saya apa yang harus dilakukan?"
+                "Siapa yang dapat memberi tahu saya apa yang harus dilakukan?"
             )
 
     return is_admin
@@ -111,9 +111,9 @@ def bot_admin(func):
         message_chat_title = update.effective_message.chat.title
 
         if update_chat_title == message_chat_title:
-            not_admin = "I'm not admin! - REEEEEE"
+            not_admin = "Saya bukan admin! - REEEEEE"
         else:
-            not_admin = f"I'm not admin in <b>{update_chat_title}</b>! - REEEEEE"
+            not_admin = f"Saya bukan admin di <b>{update_chat_title}</b>! - REEEEEE"
 
         if is_bot_admin(chat, bot.id):
             return func(update, context, *args, **kwargs)
