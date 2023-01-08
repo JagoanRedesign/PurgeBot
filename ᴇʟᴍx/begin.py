@@ -51,7 +51,7 @@ def help_button(update: Update, context: CallbackContext):
     try:
         if mod_match:
             module = mod_match.group(1)
-            text = "Here is the help for the *{}* module:\n".format(HELPABLE[module].__element__) \
+            text = "Berikut adalah bantuan untuk *{}* modul:\n".format(HELPABLE[module].__element__) \
                    + HELPABLE[module].__help__
             query.message.edit_text(text=text,
                                      parse_mode=ParseMode.MARKDOWN,
