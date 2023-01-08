@@ -5,7 +5,7 @@ ENV PATH "$VIRTUAL_ENV/bin:$PATH"
 
 RUN apt-get update && apt-get upgrade -y
 RUN python -m pip install --upgrade pip
-RUN git clone https://github.com/xhadr/PurgeBot.git
+RUN git clone https://github.com/JagoanRedesign/PurgeBot.git
 RUN cd PurgeBot
 
 WORKDIR /PurgeBot
